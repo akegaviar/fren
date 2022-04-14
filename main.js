@@ -1,7 +1,5 @@
-/* Moralis init code */
-// REPLACE THE BELOW SERVER_URL and APP_ID with your own
 const serverUrl = process.env.API_URL;
-const appId = "FaLY0U96izeaTHPkmvxHUq87YIejSYU0KMBiHS5M";
+const appId = process.env.API_ID;
 Moralis.start({ serverUrl, appId });
 
 /* Authentication code */
@@ -9,7 +7,7 @@ async function login() {
   let user = Moralis.User.current();
   if (!user) {
     user = await Moralis.authenticate({
-      signingMessage: "Log in using Moralis"
+      signingMessage: "Log in"
     })
       .then(function (user) {
         console.log("logged in user:", user);
