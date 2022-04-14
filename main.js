@@ -1,6 +1,6 @@
 /* Moralis init code */
 // REPLACE THE BELOW SERVER_URL and APP_ID with your own
-const serverUrl = "https://hpz4yq50hr8y.usemoralis.com:2053/server";
+const serverUrl = process.env.API_URL;
 const appId = "FaLY0U96izeaTHPkmvxHUq87YIejSYU0KMBiHS5M";
 Moralis.start({ serverUrl, appId });
 
